@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"log"
 	"net/http"
+	"projectgo/cmd/service/user"
 
 	"github.com/gorilla/mux"
 )
@@ -25,7 +26,7 @@ func (s *APIServer) Run() error {
 
 	subrouter := router.PathPrefix("/api/v1").Subrouter()
 
-	userHandler := user.NewHandler(s.db)
+	userHandler := user.NewHandler()
 	userHandler.RegisterRoutes(subrouter)
 
 	log.Println("Starting API server on", s.addr)
