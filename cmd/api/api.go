@@ -1,10 +1,10 @@
 package api
 
 import (
+	"api_go/cmd/service/user"
 	"database/sql"
 	"log"
 	"net/http"
-	"projectgo/cmd/service/user"
 
 	"github.com/gorilla/mux"
 )
